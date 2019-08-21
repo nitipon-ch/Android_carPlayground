@@ -7,4 +7,8 @@
     <string name="update_button">UPDATE</string>
     <string name="delete_button">DELETE</string>
     <string name="name_text_edit">ชื่อ</string>
+    <string name="box_one_string"></string>
+    <string name="box_two_string"></string>
+    <string name="box_three_string"></string>
+
 </resources>
