@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">carPark</string>
+    <string name="box_one">ว่าง</string>
+    <string name="id_car_string">ทะเบียน</string>
+    <string name="id_car_textEdit">ทะเบียน</string>
+    <string name="model_text_edit">รุ่น</string>
+    <string name="update_button">UPDATE</string>
+    <string name="delete_button">DELETE</string>
+    <string name="name_text_edit">ชื่อ</string>
+</resources>
