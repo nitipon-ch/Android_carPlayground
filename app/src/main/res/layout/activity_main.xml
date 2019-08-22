@@ -142,43 +142,6 @@
                 app:layout_constraintStart_toEndOf="@+id/update_button"
                 app:layout_constraintTop_toBottomOf="@+id/name_edit" />
 
-        <TextView
-                android:id="@+id/idcar_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@={carModel.id_car}"
-                android:textAlignment="textStart"
-                android:textSize="30sp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/box_two" />
-
-        <TextView
-                android:id="@+id/model_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="@={carModel.model}"
-                android:textSize="30sp"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/model_edit" />
-
-        <TextView
-                android:id="@+id/name_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
-                android:text="@={carModel.name}"
-                android:textSize="30sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/update_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/model_text" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

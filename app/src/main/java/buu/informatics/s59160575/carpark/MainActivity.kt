@@ -27,6 +27,16 @@ class MainActivity : AppCompatActivity() {
             showCarModel(it)
         }
 
+        binding.boxTwo.setOnClickListener(){
+            model = 2
+            showCarModel(it)
+        }
+
+        binding.boxThree.setOnClickListener(){
+            model = 3
+            showCarModel(it)
+        }
+
         binding.updateButton.setOnClickListener(){
             addInfo(it)
         }
@@ -39,35 +49,45 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun hindEdit() {
-
-        binding.idcarEdit.visibility = View.GONE
-        binding.modelEdit.visibility = View.GONE
-        binding.nameEdit.visibility = View.GONE
-
-
-    }
 
     private fun showCarModel(view: View) {
         binding.apply {
             if(model == 1){
 
-                idcarTextView.visibility = View.GONE
-                modelText.visibility = View.GONE
-                nameText.visibility = View.GONE
-                idcarEdit.visibility = View.VISIBLE
-                modelEdit.visibility = View.VISIBLE
-                nameEdit.visibility = View.VISIBLE
-
                 if(carModel?.status == "True"){
                     idcarEdit.setText( carModel?.id_car)
-                    idcarEdit.setText( carModel?.model)
-                    idcarEdit.setText( carModel?.name)
+                    modelEdit.setText( carModel?.model)
+                    nameEdit.setText( carModel?.name)
                     boxOne.setBackgroundColor(Color.RED)
+                }else{
+                    idcarEdit.setText("")
+                    modelEdit.setText("")
+                    nameEdit.setText("")
                 }
+            }
+            if(model == 2){
 
+                if(carModelTwo?.status == "True"){
+                    idcarEdit.setText( carModelTwo?.id_car)
+                    modelEdit.setText( carModelTwo?.model)
+                    nameEdit.setText( carModelTwo?.name)
+                }else{
+                    idcarEdit.setText("")
+                    modelEdit.setText("")
+                    nameEdit.setText("")
+                }
+            }
+            if(model == 3){
 
-
+                if(carModelThree?.status == "True"){
+                    idcarEdit.setText( carModelThree?.id_car)
+                    modelEdit.setText( carModelThree?.model)
+                    nameEdit.setText( carModelThree?.name)
+                }else{
+                    idcarEdit.setText("")
+                    modelEdit.setText("")
+                    nameEdit.setText("")
+                }
             }
 
             invalidateAll()
@@ -77,22 +97,34 @@ class MainActivity : AppCompatActivity() {
     }
     private fun clearAll(view: View) {
         binding.apply {
-            carModel?.id_car = ""
-            carModel?.model = ""
-            carModel?.name = ""
-            carModel?.status = ""
+
             idcarEdit.setText("")
             modelEdit.setText("")
             nameEdit.setText("")
-            idcarTextView.visibility = View.GONE
-            modelText.visibility = View.GONE
-            nameText.visibility = View.GONE
-            idcarEdit.visibility = View.VISIBLE
-            modelEdit.visibility = View.VISIBLE
-            nameEdit.visibility = View.VISIBLE
 
             if(model == 1){
+                carModel?.id_car = ""
+                carModel?.model = ""
+                carModel?.name = ""
+                carModel?.status = ""
+                boxOne.text = "ว่าง"
                 boxOne.setBackgroundColor(Color.GREEN)
+            }
+            if(model == 2){
+                carModelTwo?.id_car = ""
+                carModelTwo?.model = ""
+                carModelTwo?.name = ""
+                carModelTwo?.status = ""
+                boxTwo.text = "ว่าง"
+                boxTwo.setBackgroundColor(Color.GREEN)
+            }
+            if(model == 3){
+                carModelThree?.id_car = ""
+                carModelThree?.model = ""
+                carModelThree?.name = ""
+                carModelThree?.status = ""
+                boxThree.text = "ว่าง"
+                boxThree.setBackgroundColor(Color.GREEN)
             }
 
 
@@ -102,21 +134,33 @@ class MainActivity : AppCompatActivity() {
     private fun addInfo(view: View) {
 
         binding.apply {
-            carModel?.id_car = "ทะเบียน :  " + idcarEdit.text.toString()
-            carModel?.model = "รุ่น :  " + modelEdit.text.toString()
-            carModel?.name = "เจ้าของ :  " + nameEdit.text.toString()
-            carModel?.status = "True"
 
-            idcarEdit.visibility = View.GONE
-            modelEdit.visibility = View.GONE
-            nameEdit.visibility = View.GONE
-            idcarTextView.visibility = View.VISIBLE
-            modelText.visibility = View.VISIBLE
-            nameText.visibility = View.VISIBLE
 
             if(model == 1){
+                carModel?.id_car = "ทะเบียน :  " + idcarEdit.text.toString()
+                carModel?.model = "รุ่น :  " + modelEdit.text.toString()
+                carModel?.name = "เจ้าของ :  " + nameEdit.text.toString()
+                carModel?.status = "True"
+                boxOne.text = "ไม่ว่าง"
                 boxOne.setBackgroundColor(Color.RED)
             }
+            if(model == 2){
+                carModelTwo?.id_car = "ทะเบียน :  " + idcarEdit.text.toString()
+                carModelTwo?.model = "รุ่น :  " + modelEdit.text.toString()
+                carModelTwo?.name = "เจ้าของ :  " + nameEdit.text.toString()
+                carModelTwo?.status = "True"
+                boxTwo.text = "ไม่ว่าง"
+                boxTwo.setBackgroundColor(Color.RED)
+            }
+            if(model == 3){
+                carModelThree?.id_car = "ทะเบียน :  " + idcarEdit.text.toString()
+                carModelThree?.model = "รุ่น :  " + modelEdit.text.toString()
+                carModelThree?.name = "เจ้าของ :  " + nameEdit.text.toString()
+                carModelThree?.status = "True"
+                boxThree.text = "ไม่ว่าง"
+                boxThree.setBackgroundColor(Color.RED)
+            }
+
 
             invalidateAll()
         }
