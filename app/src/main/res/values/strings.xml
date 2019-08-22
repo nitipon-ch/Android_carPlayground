@@ -10,5 +10,8 @@
     <string name="box_one_string"></string>
     <string name="box_two_string"></string>
     <string name="box_three_string"></string>
+    <string name="id_car_text_view" />
+    <string name="model_text_view" />
+    <string name="name_text" />
 
 </resources>
