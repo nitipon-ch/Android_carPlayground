@@ -14,46 +14,67 @@ class MainActivity : AppCompatActivity() {
     private val carModel :CarModel= CarModel("", "", "", "")
     private val carModelTwo :CarModel= CarModel("", "", "", "")
     private val carModelThree :CarModel= CarModel("", "", "", "")
-    var model = 1
+    var model = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.boxOne.setOnClickListener(){
-            model = 1
-            showCarModel(it)
+        binding.apply {
+            boxOne.setOnClickListener(){
+                model = 1
+                showViewCard()
+                showCarModel(it)
+            }
+
+            boxTwo.setOnClickListener(){
+                model = 2
+                showViewCard()
+                showCarModel(it)
+            }
+
+            boxThree.setOnClickListener(){
+                model = 3
+                showViewCard()
+                showCarModel(it)
+            }
+
+            updateButton.setOnClickListener(){
+                addInfo(it)
+            }
+
+            deleteButton.setOnClickListener(){
+                clearAll(it)
+            }
+
+            showViewCard()
+
+//            idcarEdit.visibility = View.GONE
+//            modelEdit.visibility = View.GONE
+//            nameEdit.visibility = View.GONE
+//            updateButton.visibility = View.GONE
+//            deleteButton.visibility = View.GONE
+
+            carModel = this@MainActivity.carModel
+
         }
 
-        binding.boxTwo.setOnClickListener(){
-            model = 2
-            showCarModel(it)
-        }
-
-        binding.boxThree.setOnClickListener(){
-            model = 3
-            showCarModel(it)
-        }
-
-        binding.updateButton.setOnClickListener(){
-            addInfo(it)
-        }
-
-        binding.deleteButton.setOnClickListener(){
-            clearAll(it)
-        }
-
-        binding.carModel = this@MainActivity.carModel
 
     }
 
+    private fun showViewCard(){
+        if(model == 0){
+            binding.cardViewObject.visibility = View.GONE
+        }else{
+            binding.cardViewObject.visibility = View.VISIBLE
+        }
+    }
 
     private fun showCarModel(view: View) {
         binding.apply {
             if(model == 1){
-
+                slotId.text = "Slot : 1"
                 if(carModel?.status == "True"){
                     idcarEdit.setText( carModel?.id_car)
                     modelEdit.setText( carModel?.model)
@@ -66,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             if(model == 2){
-
+                slotId.text = "Slot : 2"
                 if(carModelTwo?.status == "True"){
                     idcarEdit.setText( carModelTwo?.id_car)
                     modelEdit.setText( carModelTwo?.model)
@@ -78,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             if(model == 3){
-
+                slotId.text = "Slot : 3"
                 if(carModelThree?.status == "True"){
                     idcarEdit.setText( carModelThree?.id_car)
                     modelEdit.setText( carModelThree?.model)
@@ -108,7 +129,7 @@ class MainActivity : AppCompatActivity() {
                 carModel?.name = ""
                 carModel?.status = ""
                 boxOne.text = "ว่าง"
-                boxOne.setBackgroundColor(Color.GREEN)
+                boxOne.setBackgroundColor(Color.parseColor("#8BC34A"))
             }
             if(model == 2){
                 carModelTwo?.id_car = ""
@@ -116,7 +137,7 @@ class MainActivity : AppCompatActivity() {
                 carModelTwo?.name = ""
                 carModelTwo?.status = ""
                 boxTwo.text = "ว่าง"
-                boxTwo.setBackgroundColor(Color.GREEN)
+                boxTwo.setBackgroundColor(Color.parseColor("#8BC34A"))
             }
             if(model == 3){
                 carModelThree?.id_car = ""
@@ -124,7 +145,7 @@ class MainActivity : AppCompatActivity() {
                 carModelThree?.name = ""
                 carModelThree?.status = ""
                 boxThree.text = "ว่าง"
-                boxThree.setBackgroundColor(Color.GREEN)
+                boxThree.setBackgroundColor(Color.parseColor("#8BC34A"))
             }
 
 

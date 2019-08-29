@@ -13,5 +13,6 @@
     <string name="id_car_text_view" />
     <string name="model_text_view" />
     <string name="name_text" />
+    <string name="slot_id_text">slot :</string>
 
 </resources>
