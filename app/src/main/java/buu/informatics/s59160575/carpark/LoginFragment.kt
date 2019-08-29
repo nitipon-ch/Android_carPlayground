@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import buu.informatics.s59160575.carpark.databinding.FragmentLoginBinding
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -24,9 +25,9 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_login, container, false)
 
-        binding.loginButton.setOnClickListener(){
+        binding.loginButton.setOnClickListener{
             if (usernameEdit.text.toString() == "admin" && passwordEdit.text.toString() == "password"){
-                binding.errorText.text = "You are admin"
+                    view!!.findNavController().navigate(R.id.action_loginFragment_to_carParkFragment)
             }else{
                 binding.errorText.text = "username or password is not match!!"
             }
