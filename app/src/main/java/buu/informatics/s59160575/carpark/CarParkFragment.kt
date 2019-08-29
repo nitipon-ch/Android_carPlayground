@@ -14,7 +14,7 @@ import buu.informatics.s59160575.carpark.databinding.FragmentCarParkBinding
  * A simple [Fragment] subclass.
  */
 class CarParkFragment : Fragment() {
-
+    private lateinit var binding: FragmentCarParkBinding
     private val carModel :CarModel= CarModel("", "", "", "")
     private val carModelTwo :CarModel= CarModel("", "", "", "")
     private val carModelThree :CarModel= CarModel("", "", "", "")
@@ -24,40 +24,40 @@ class CarParkFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentCarParkBinding>(inflater,
+        binding = DataBindingUtil.inflate<FragmentCarParkBinding>(inflater,
             R.layout.fragment_car_park, container, false)
 
         binding.apply {
             boxOne.setOnClickListener(){
                 model = 1
 
-                showViewCard(binding)
-                showCarModel(it,binding)
+                showViewCard()
+                showCarModel(it)
             }
 
             boxTwo.setOnClickListener(){
                 model = 2
-                showViewCard(binding)
-                showCarModel(it,binding)
+                showViewCard()
+                showCarModel(it)
             }
 
             boxThree.setOnClickListener(){
                 model = 3
-                showViewCard(binding)
-                showCarModel(it,binding)
+                showViewCard()
+                showCarModel(it)
             }
 
             updateButton.setOnClickListener(){
-                addInfo(it,binding)
+                addInfo(it)
             }
 
             deleteButton.setOnClickListener(){
-                clearAll(it,binding)
+                clearAll(it)
             }
 
             carModel = this@CarParkFragment.carModel
 
-            showViewCard(binding)
+            showViewCard()
 
 
 
@@ -66,7 +66,7 @@ class CarParkFragment : Fragment() {
         return binding.root
     }
 
-    private fun showViewCard(binding: FragmentCarParkBinding){
+    private fun showViewCard(){
 
         if(model == 0){
             binding.cardViewObject.visibility = View.GONE
@@ -75,7 +75,7 @@ class CarParkFragment : Fragment() {
         }
     }
 
-    private fun showCarModel(view: View, binding: FragmentCarParkBinding) {
+    private fun showCarModel(view: View) {
         binding.apply {
             if(model == 1){
                 slotId.text = "Slot : 1"
@@ -120,7 +120,7 @@ class CarParkFragment : Fragment() {
         }
 
     }
-    private fun clearAll(view: View , binding: FragmentCarParkBinding) {
+    private fun clearAll(view: View) {
         binding.apply {
 
             idcarEdit.setText("")
@@ -156,7 +156,7 @@ class CarParkFragment : Fragment() {
         }
     }
 
-    private fun addInfo(view: View , binding: FragmentCarParkBinding) {
+    private fun addInfo(view: View) {
 
         binding.apply {
 

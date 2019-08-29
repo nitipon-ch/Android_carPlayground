@@ -11,8 +11,8 @@
 
 
             <fragment
-                    android:id="@+id/carParkFragment"
-                    android:name="buu.informatics.s59160575.carpark.CarParkFragment"
+                    android:id="@+id/loginFragment"
+                    android:name="buu.informatics.s59160575.carpark.LoginFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
