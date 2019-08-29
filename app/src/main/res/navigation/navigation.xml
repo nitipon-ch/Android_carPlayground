@@ -12,7 +12,8 @@
             tools:layout="@layout/fragment_login" >
         <action
                 android:id="@+id/action_loginFragment_to_carParkFragment"
-                app:destination="@id/carParkFragment" />
+                app:destination="@id/carParkFragment"
+                app:popUpTo="@+id/loginFragment" />
     </fragment>
     <fragment
             android:id="@+id/carParkFragment"
