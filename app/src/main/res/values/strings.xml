@@ -22,5 +22,6 @@
     <string name="password_edit_text" />
     <string name="password_hint">Password</string>
     <string name="login_button">LOGIN</string>
+    <string name="error_text" />
 
 </resources>
