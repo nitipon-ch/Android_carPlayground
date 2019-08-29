@@ -3,10 +3,8 @@ package buu.informatics.s59160575.carpark
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import buu.informatics.s59160575.carpark.databinding.FragmentCarParkBinding
 
@@ -62,8 +60,13 @@ class CarParkFragment : Fragment() {
 
 
         }
-
+        setHasOptionsMenu(true)
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.option_menu, menu)
     }
 
     private fun showViewCard(){

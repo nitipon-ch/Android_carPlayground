@@ -23,5 +23,11 @@
     <string name="password_hint">Password</string>
     <string name="login_button">LOGIN</string>
     <string name="error_text" />
+    <string name="you_info">Your Info</string>
+    <string name="id_info_text">รหัสนิสิต :   59160575</string>
+    <string name="name_info_text">ื่ชื่อ  :  นายนิติพล</string>
+    <string name="surname_info_text">นามสกุล :  ชิงธงไชย</string>
+    <string name="nickname_info">ชื่อเล่น : อาร์ม</string>
+    <string name="info">info</string>
 
 </resources>
